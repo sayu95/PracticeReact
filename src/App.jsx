@@ -1,9 +1,9 @@
+import Calculator from "./Calculator"
 
 function App() {
-
   return (
     <>
-     <h1>asdas</h1>
+     <Calculator/>
     </>
   )
 }
