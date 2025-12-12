@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
 
 const MainContainer = styled.div`
   display: flex;
@@ -10,12 +11,13 @@ const MainContainer = styled.div`
 
 const ButtonContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;max-width: 450px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 450px;
   width: 50%;
   height: 50%;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-`;// repeat(4, 1fr);
+`; // repeat(4, 1fr);
 
 const InputBar = styled.input`
   width: 40%;
@@ -38,7 +40,7 @@ const Button = styled.button`
   cursor: pointer;
   box-shadow: 3px 3px 3px lightgray;
 
-   &:active {
+  &:active {
     margin-left: 2px;
     margin-top: 2px;
     box-shadow: none;
@@ -56,35 +58,39 @@ const ZeroButton = styled(Button)`
 `;
 
 function Calculator() {
+  const [result, setResult] = useState("");
+  const [Oper, setOper] = useState("");
+  const [Num, setNum] = useState("");
+
   return (
     <>
-    <MainContainer>
-    <h1>계산기</h1>
-    <InputBar></InputBar>
-    <ButtonContainer>
-      <Button>AC</Button>
-      <Button>DEL</Button>
-      <CalButton>%</CalButton>
-      <CalButton>/</CalButton>
-      <Button value={7}>7</Button>
-      <Button value={8}>8</Button>
-      <Button value={9}>9</Button>
-      <CalButton>*</CalButton>
-      <Button value={4}>4</Button>
-      <Button value={5}>5</Button>
-      <Button value={6}>6</Button>
-      <CalButton>-</CalButton>
-      <Button value={1}>1</Button>
-      <Button value={2}>2</Button>
-      <Button value={3}>3</Button>
-      <CalButton>+</CalButton>
-      <ZeroButton>0</ZeroButton>
-      <Button>.</Button>
-      <CalButton>=</CalButton>
-      </ButtonContainer>
-    </MainContainer>
+      <MainContainer>
+        <h1>계산기</h1>
+        <InputBar></InputBar>
+        <ButtonContainer>
+          <Button>AC</Button>
+          <Button>DEL</Button>
+          <CalButton>%</CalButton>
+          <CalButton>/</CalButton>
+          <Button value={7}>7</Button>
+          <Button value={8}>8</Button>
+          <Button value={9}>9</Button>
+          <CalButton>*</CalButton>
+          <Button value={4}>4</Button>
+          <Button value={5}>5</Button>
+          <Button value={6}>6</Button>
+          <CalButton>-</CalButton>
+          <Button value={1}>1</Button>
+          <Button value={2}>2</Button>
+          <Button value={3}>3</Button>
+          <CalButton>+</CalButton>
+          <ZeroButton>0</ZeroButton>
+          <Button>.</Button>
+          <CalButton>=</CalButton>
+        </ButtonContainer>
+      </MainContainer>
     </>
-  )
+  );
 }
 
-export default Calculator
+export default Calculator;

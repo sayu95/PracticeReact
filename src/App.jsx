@@ -1,11 +1,17 @@
-import Calculator from "./Calculator"
+import { createBrowserRouter } from "react-router";
+import Headers from "./Headers";
+const rootRouter = createBrowserRouter([
+  {
+    path: "/",
+  },
+]);
 
 function App() {
   return (
     <>
-     <Calculator/>
+      <Headers></Headers>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
