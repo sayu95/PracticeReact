@@ -10,6 +10,7 @@ function RootLayout() {
       <div className="main">
         <SideBar />
         <div className="content">
+          {/* 중요 */}
           <Outlet />
         </div>
       </div>

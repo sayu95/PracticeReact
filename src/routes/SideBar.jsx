@@ -10,7 +10,11 @@ function SideBar() {
 
   const handleClick = () => {
     // 동적 url이동
-    navigate("/403/10/?hero=수민&weapon=내공");
+    // navigate함수는 두번째 매개변수 {state}를 이용하여 추가적으로 필요한 내용들을
+    // 쉽게 전달할 수 있다. 이걸 사용할지 안할지는 선택!
+    navigate("/403/10/?hero=수민&weapon=내공", {
+      state: { myEnemy: "종창", weakPoint: "유식" },
+    });
   };
 
   return (
