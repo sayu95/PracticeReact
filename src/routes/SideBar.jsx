@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { JiwonContext } from "../context/JiwonContext";
+import { NavLink } from "react-router";
 
 function SideBar() {
   const [members, setMembers] = useContext(JiwonContext);
@@ -8,7 +9,16 @@ function SideBar() {
     <div className="sidebar">
       <ul>
         {members.map((member) => (
-          <li key={member.mid}>{member.name}</li>
+          <li key={member.mid}>
+            <NavLink
+              style={({ isActive }) =>
+                isActive ? { color: "blue", fontWeight: "bolder" } : null
+              }
+              to={`/${member.mid}`}
+            >
+              {member.name}
+            </NavLink>
+          </li>
         ))}
       </ul>
     </div>
